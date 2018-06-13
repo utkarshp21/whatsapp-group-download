@@ -1,0 +1,16 @@
+{
+    "name": "Whats app group deatails",
+    "version": "1.0",
+    "description": "Extension to download details of group members in whatsApp",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": [
+                "https://web.whatsapp.com/"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
