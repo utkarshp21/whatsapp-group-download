@@ -1,3 +1,10 @@
+$('#app').on("click", "[title='Group info']", function () {
+	
+   setTimeout(addButton, 100);
+
+});
+
+
 $('#app').on("click",'._1WBXd', function () {
     setTimeout(addButton, 100);
 });
@@ -72,8 +79,11 @@ var downloadInfo = function () {
         }, 4000
         ,function () {
             $("#loadingElem").remove();
+			var fileTitle = 'GroupContacts';
             console.log(group_dict)
+			exportCSVFile( group_dict, fileTitle); 
             console.log(Object.keys(group_dict).length)
         });
        
 }
+
