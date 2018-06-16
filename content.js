@@ -3,16 +3,17 @@ $('#app').on("click",'._1WBXd', function () {
 });
 
 var addButton = function () {
+    if (!$("#DownloadButton").length) {
+        var button_tag = document.createElement("div");
+        button_tag.innerHTML = '<div id="DownloadButton" class="_14oqx" role="button"><div class="DcItJ"><div class="_3WCza"><span class="_3LL06">Download Group Contacts</span></div></div></div>';
 
-    var button_tag = document.createElement("div");
-    button_tag.innerHTML = '<div id="DownloadButton" class="_14oqx" role="button"><div class="DcItJ"><div class="_3WCza"><span class="_3LL06">Download Group Contacts</span></div></div></div>';
-    
-    var menu_dom = document.getElementsByClassName("AfVTG")[0].children[3];
-    menu_dom.prepend(button_tag);
-     
-    $("#DownloadButton").click(function () {
-         downloadInfo()
-    });
+        var menu_dom = document.getElementsByClassName("AfVTG")[0].children[3];
+        menu_dom.prepend(button_tag);
+
+        $("#DownloadButton").click(function () {
+            downloadInfo()
+        });
+    }
 }
 
 var downloadInfo = function () {
