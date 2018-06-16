@@ -1,14 +1,15 @@
 
-function convertToCSV(objArray) {
-    var array =  JSON.parse(objArray) 
-    var str = '';
+function convertToCSV(dict) {
+    
+    var str = 'Number,Name,Country Code' + '\r\n';;
 
-    for (var i = 0; i < array.length; i++) {
+    for ( key in dict) {
         var line = '';
-        for (var index in array[i]) {
+		line=key
+        for ( val in dict[key]) {
             if (line != '') line += ','
 
-            line += array[i][index];
+            line += dict[key][val];
         }
 
         str += line + '\r\n';
@@ -16,16 +17,9 @@ function convertToCSV(objArray) {
 
     return str;
 }
-function exportCSVFile(header, items, fileTitle) {
-    if (header) {
-		//Opositte if Push, adds elements to the begining
-        items.unshift(header);
-    }
+function exportCSVFile(items, fileTitle) {
 
-    // Convert Object to JSON
-    var jsonObject = JSON.stringify(items);
-
-    var csv = this.convertToCSV(jsonObject);
+    var csv = this.convertToCSV(items);
 
     var exportedFilenmae = fileTitle + '.csv' || 'export.csv';
 	//Needed for IE as it always attempts to download blob[data] rather than from some url
@@ -50,19 +44,6 @@ function exportCSVFile(header, items, fileTitle) {
 
 
 
-var header = {
-    name: 'Name', // remove commas to avoid errors
-    number: "Number",
-    country_code: "Country Code",
-};
-
-items = [
- {name:"Himanish ", number :"888888888",country_code:"80"},
- {name:"Utkarsh ", number :"9555991205",country_code:"+91"},
- {name:"Utkarsh ", number :"9555991205",country_code:"+91"},
- {name:"Utkarsh ", number :"9555991205",country_code:"+91"}
-];
 
 
-var fileTitle = 'GroupContacts';
-exportCSVFile(header, items, fileTitle); 
+

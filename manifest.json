@@ -1,17 +1,36 @@
 {
-    "name": "Whats app group deatails",
+    "name": "Whatsapp Group Contacts Download",
     "version": "1.0",
-    "description": "Extension to download details of group members in whatsApp",
+    "description": "Download contact details of all members of WhatsApp group",
     "manifest_version": 2,
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "browser_action":{
+        "default_icon": "images/icon-128.png"
+    },
     "content_scripts": [
         {
             "matches": [
                 "https://web.whatsapp.com/"
             ],
             "js": [
-                "resources/jquery-3.3.1.min.js"
-                ,"content.js"
+                "resources/jquery-3.3.1.min.js",
+				"cleanAndCreateCSV.js",
+                "content.js"
             ]
         }
+    ],
+    "permissions": [
+        "tabs"
     ]
 }
