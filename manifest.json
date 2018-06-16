@@ -1,8 +1,17 @@
 {
-    "name": "Whats app group deatails",
+    "name": "Whatsapp Group Contact Download",
     "version": "1.0",
-    "description": "Extension to download details of group members in whatsApp",
+    "description": "Extension to download details of group members in Whatsapp",
     "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "browser_action":{
+        "default_icon":"icon.png"
+    },
     "content_scripts": [
         {
             "matches": [
@@ -13,5 +22,8 @@
                 ,"content.js"
             ]
         }
+    ],
+    "permissions": [
+        "tabs"
     ]
 }
