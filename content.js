@@ -10,16 +10,17 @@ $('#app').on("click",'._1WBXd', function () {
 });
 
 var addButton = function () {
+    if (!$("#DownloadButton").length) {
+        var button_tag = document.createElement("div");
+        button_tag.innerHTML = '<div id="DownloadButton" class="_14oqx" role="button"><div class="DcItJ"><div class="_3WCza"><span class="_3LL06">Download Group Contacts</span></div></div></div>';
 
-    var button_tag = document.createElement("div");
-    button_tag.innerHTML = '<div id="DownloadButton" class="_14oqx" role="button"><div class="DcItJ"><div class="_3WCza"><span class="_3LL06">Download Group Contacts</span></div></div></div>';
-    
-    var menu_dom = document.getElementsByClassName("AfVTG")[0].children[3];
-    menu_dom.prepend(button_tag);
-     
-    $("#DownloadButton").click(function () {
-         downloadInfo()
-    });
+        var menu_dom = document.getElementsByClassName("AfVTG")[0].children[3];
+        menu_dom.prepend(button_tag);
+
+        $("#DownloadButton").click(function () {
+            downloadInfo()
+        });
+    }
 }
 
 var downloadInfo = function () {
@@ -39,9 +40,10 @@ var downloadInfo = function () {
 
         $(objDiv).scroll(function () {
                 
-             var contact_obj = document.getElementsByClassName("_2sNbV")[0].getElementsByClassName("_1CRb5 _34vig")[4].children[1].children[0].children
+            var contact_obj = document.getElementsByClassName("_2sNbV")[0].getElementsByClassName("_1CRb5 _34vig")[4].lastChild.children[0].children
              for (var i = 0; i < contact_obj.length; i++) {
                 var base_path = contact_obj[i].children[0].children[0];
+                debugger;
                 var contact_number = base_path.children[1].children[0].children[0].children[0].innerText;
                 
                 if (!(contact_number in group_dict)) {
