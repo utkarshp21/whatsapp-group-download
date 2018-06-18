@@ -1,13 +1,11 @@
-$('#app').on("click", "[title='Group info']", function () {
+
+$('#app').on("click", "[title='Group info'], ._1WBXd", function () {
+   //Calling function to add 'Download Contact Info' on click event opening 'Group Info' section
    setTimeout(addButton, 100);
 });
 
-
-$('#app').on("click",'._1WBXd', function () {
-    setTimeout(addButton, 100);
-});
-
 var addButton = function () {
+    //Add 'Download Contact Info' button to group info section
     if (!$("#DownloadButton").length) {
         var button_tag = document.createElement("div");
         button_tag.innerHTML = '<div id="DownloadButton" class="_14oqx" role="button"><div class="DcItJ"><div class="_3WCza"><span class="_3LL06">Download Group Contacts</span></div></div></div>';
@@ -22,7 +20,10 @@ var addButton = function () {
 }
 
 var downloadInfo = function () {
-        
+        // Crawling data while scrolling the group info member list,
+        // storing it to array of objects and finnaly converting it to CSV and 
+        // exporting to local directory 
+
         var body_elem = document.getElementsByTagName("BODY")[0];
 
         var loading_elem = document.createElement("div");
@@ -55,7 +56,6 @@ var downloadInfo = function () {
                    
                     var country_code = ''
                     
-                    
                     if(contact_number[0] == "+"){
                         for(var i=0 ; i<3 ; i++){
                             if (contact_number[i] != ' '){
@@ -80,9 +80,7 @@ var downloadInfo = function () {
         ,function () {
             $("#loadingElem").remove();
 			var fileTitle = 'GroupContacts';
-            console.log(group_dict)
 			exportCSVFile(group_dict, fileTitle); 
-            console.log(Object.keys(group_dict).length)
         });
        
 }
