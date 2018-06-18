@@ -38,11 +38,10 @@ var downloadInfo = function () {
         var group_dict = {}
 
         $(objDiv).scroll(function () {
-                
             var contact_obj = document.getElementsByClassName("_2sNbV")[0].getElementsByClassName("_1CRb5 _34vig")[4].lastChild.children[0].children
              for (var i = 0; i < contact_obj.length; i++) {
+                
                 var base_path = contact_obj[i].children[0].children[0];
-                debugger;
                 var contact_number = base_path.children[1].children[0].children[0].children[0].innerText;
                 
                 if (!(contact_number in group_dict)) {
@@ -79,7 +78,7 @@ var downloadInfo = function () {
         }, 4000
         ,function () {
             $("#loadingElem").remove();
-			var fileTitle = 'GroupContacts';
+            var fileTitle = document.getElementsByClassName("_2sNbV")[0].getElementsByClassName("_1CRb5 _34vig")[0].children[1].children[0].children[0].children[1].innerText
 			exportCSVFile(group_dict, fileTitle); 
         });
        
