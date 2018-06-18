@@ -1,7 +1,6 @@
-
 function convertToCSV(dict) {
-    
-    var str = 'Number,Name,Country Code' + '\r\n';;
+    //Convert array of objects to CSV 
+    var str = 'Contact Number,Member Name,Country Code' + '\r\n';;
 
     for ( key in dict) {
         var line = '';
@@ -11,34 +10,27 @@ function convertToCSV(dict) {
 
             line += dict[key][val];
         }
-
         str += line + '\r\n';
     }
-
     return str;
 }
-function exportCSVFile(items, fileTitle) {
 
+function exportCSVFile(items, fileTitle) {
+    //Export CSV to Local Directory
+    
     var csv = this.convertToCSV(items);
 
-    var exportedFilenmae = fileTitle + '.csv' || 'export.csv';
-	//Needed for IE as it always attempts to download blob[data] rather than from some url
-    var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    if (navigator.msSaveBlob) { // IE 10+
-        navigator.msSaveBlob(blob, exportedFilenmae);
-    } else {
-        var link = document.createElement("a");
-        if (link.download !== undefined) { // feature detection
-            // Browsers that support HTML5 download attribute
-            var url = URL.createObjectURL(blob);
-            link.setAttribute("href", url);
-            link.setAttribute("download", exportedFilenmae);
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    }
+    var exportedFilename = fileTitle + '.csv' || 'export.csv';
+    
+    var link = document.createElement("a");
+    var url = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+    link.setAttribute("href", url);
+    link.setAttribute("download", exportedFilename);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
 }
 
 
