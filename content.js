@@ -75,7 +75,7 @@ var downloadInfo = function () {
          
         $(objDiv).animate({
             scrollTop: $(objDiv).offset().top,
-        }, 4000
+        }, 5000
         ,function () {
             $("#loadingElem").remove();
             var fileTitle = document.getElementsByClassName("_2sNbV")[0].getElementsByClassName("_1CRb5 _34vig")[0].children[1].children[0].children[0].children[1].innerText

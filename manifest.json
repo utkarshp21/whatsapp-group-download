@@ -1,6 +1,6 @@
 {
     "name": "Whatsapp Group Contacts Download",
-    "version": "1.1",
+    "version": "1.2",
     "description": "Download contact details of all members of WhatsApp group",
     "manifest_version": 2,
     "icons": {
