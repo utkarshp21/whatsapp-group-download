@@ -17,7 +17,9 @@ function convertToCSV(dict) {
 
 function exportCSVFile(items, fileTitle) {
     //Export CSV to Local Directory
-    
+    if(fileTitle==""){
+		fileTitle="Contacts";
+	}
     var csv = this.convertToCSV(items);
 
     var exportedFilename = fileTitle + '.csv' || 'export.csv';

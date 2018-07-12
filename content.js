@@ -43,7 +43,8 @@ var downloadInfo = function () {
                 
                 var base_path = contact_obj[i].children[0].children[0];
                 var contact_number = base_path.children[1].children[0].children[0].children[0].innerText;
-                
+                contact_number = contact_number.replace(/(\r\n\t|\n|\r\t)/gm,"");
+
                 if (!(contact_number in group_dict)) {
                      var name_path = base_path.children[1].children[1].children[1].children[0].children[0];
                      
