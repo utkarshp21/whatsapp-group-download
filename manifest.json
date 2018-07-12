@@ -1,7 +1,7 @@
 {
-    "name": "Whatsapp Group Contacts Download",
-    "version": "1.2",
-    "description": "Download contact details of all members of WhatsApp group",
+    "name": "Group Contacts Download",
+    "version": "1.4",
+    "description": "This is an unofficial enhacement for WhatsApp Web. This extension in any way is not related to WhatsApp Inc. WhatsApp is a trademark of WhatsApp Inc.",
     "manifest_version": 2,
     "icons": {
         "16": "images/icon-16.png",
