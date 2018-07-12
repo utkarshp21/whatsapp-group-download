@@ -22,7 +22,7 @@ function exportCSVFile(items, fileTitle) {
 	}
     var csv = this.convertToCSV(items);
 
-    var exportedFilename = fileTitle + '.csv' || 'export.csv';
+    var exportedFilename = fileTitle + '.csv';
     
     var link = document.createElement("a");
     var url = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
