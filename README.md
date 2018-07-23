@@ -32,4 +32,4 @@ Steps to download contacts :
 ## Authors
 
 * **Himaneesh Pathak** - https://github.com/himaneesh
-* **Utkarsh Prakash** - All the commits were made from different account
+* **Utkarsh Prakash** - https://github.com/utkarshp21
