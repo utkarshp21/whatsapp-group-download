@@ -4,7 +4,7 @@ In a single click, download Whatsapp group menbers's contact in an excel sheet(.
 
 Steps to download contacts :
 
-1)Download extension from - https://chrome.google.com/webstore/detail/fijlkhdiejfgafinipoboinbhnfpigcn/publish-accepted?authuser=3
+1)Download extension from - https://chrome.google.com/webstore/detail/group-contacts-download/pbclieiojeinbbibinmfkbncmagbeknj
 
 2)Open WhatsApp on clicking on extension icon or by directly opening WhatsApp web
 
