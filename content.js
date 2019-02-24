@@ -4,6 +4,11 @@ $('#app').on("click", "[title='Group info'], ._1WBXd", function () {
    setTimeout(addButton, 100);
 });
 
+$('#app').on("click", "._2y17h", function () {
+    //Calling function to add 'Download Contact Info' on click event opening 'Group Info' section
+    setTimeout(addButton, 100);
+});
+
 var addButton = function () {
     //Add 'Download Contact Info' button to group info section
     if (!$("#DownloadButton").length) {

@@ -1,6 +1,6 @@
 {
     "name": "Group Contacts Download",
-    "version": "1.2",
+    "version": "1.3",
     "description": "This is an unofficial enhancement for WhatsApp Web. This extension is not related to WhatsApp of WhatsApp Inc.",
     "manifest_version": 2,
     "icons": {
