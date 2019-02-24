@@ -24,6 +24,9 @@ var downloadInfo = function () {
         // storing it to array of objects and finnaly converting it to CSV and 
         // exporting to local directory 
 
+        //Click more to show all participants which then can be creawled
+        document.getElementsByClassName("AfVTG")[0].children[4].lastChild.click();
+
         var body_elem = document.getElementsByTagName("BODY")[0];
 
         var loading_elem = document.createElement("div");
